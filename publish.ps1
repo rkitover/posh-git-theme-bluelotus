@@ -9,7 +9,9 @@ $sources =
     "${module}.psm1",
     "en/about_${module}.help.txt"
 
-ri -r $prep_dir -ea ignore
+if (test-path $prep_dir) {
+    ri -r $prep_dir
+}
 mkdir $prep_dir | out-null
 
 $sources | %{
@@ -21,10 +23,7 @@ $sources | %{
     cpi $_ $dest
 }
 
-$api_key = read-host -assecurestring "Enter PSGallery API key"
-
-# Convert from SecureString.
-$api_key = [Runtime.InteropServices.Marshal]::PtrToStringAuto([Runtime.InteropServices.Marshal]::SecureStringToBSTR($api_key))
+$api_key = read-host -maskinput "Enter PSGallery API key"
 
 import-module powershellget
 
