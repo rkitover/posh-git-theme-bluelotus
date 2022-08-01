@@ -58,6 +58,7 @@ git clone git@github.com:rkitover/posh-git-theme-bluelotus
 , then in your `$profile` add:
 
 ```powershell
+import-module ~/source/repos/posh-git/src/posh-git.psd1
 import-module ~/source/repos/posh-git-theme-bluelotus/posh-git-theme-bluelotus.psm1
 ```
 .
@@ -73,7 +74,7 @@ It also changes the
 [`$host.ui.rawui.windowtitle`](https://docs.microsoft.com/en-us/dotnet/api/system.management.automation.host.pshostrawuserinterface.windowtitle?view=powershellsdk-7.0.0#system-management-automation-host-pshostrawuserinterface-windowtitle)
 property to set the window title to the current hostname. If you would prefer to
 have [posh-git](https://github.com/dahlbyk/posh-git) set the window title,
-override this variable in your `$profile` after loading this module:
+override this property in your `$profile` after importing this module:
 
 ```powershell
 $gitpromptsettings.windowtitle =

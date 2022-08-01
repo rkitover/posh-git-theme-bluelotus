@@ -1,0 +1,29 @@
+TOPIC
+    about_posh-git-theme-bluelotus
+
+SHORT DESCRIPTION
+    Theme for the posh-git prompt module with last command status indicator,
+    username and host.
+
+LONG DESCRIPTION
+    This module is a theme for the posh-git PowerShell prompt. It shows a last
+    command success/error indicator, the Git branch and status when in a Git
+    repository, and your current username and hostname.
+
+USAGE AND CUSTOMIZATION
+    Put the following into your $profile:
+
+    import-module posh-git-theme-bluelotus
+
+    # To disable the window title override do:
+    #
+    # $gitpromptsettings.windowtitle =
+    #     $gitprompt_theme_bluelotus.originalwindowtitle
+
+KEYWORDS
+    Git git prompt posh-git theme
+
+SEE ALSO
+    about_posh-git
+    about_Prompts
+    about_Line_Editing

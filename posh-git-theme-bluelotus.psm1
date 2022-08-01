@@ -1,5 +1,4 @@
-import-module posh-git
-
+# Exported settings variable.
 $gitprompt_theme_bluelotus = @{}
 
 # Windows PowerShell does not support the `e special character
@@ -10,7 +9,6 @@ $reset          = "$e[0m"
 $bold           = "$e[1m"
 
 # Tango colors.
-$white          = "$e[38;2;211;215;207m"
 $bright_white   = "$e[38;2;238;238;236m"
 $green          = "$e[38;2;078;154;006m"
 $bright_magenta = "$e[38;2;173;127;168m"
