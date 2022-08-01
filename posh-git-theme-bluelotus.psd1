@@ -95,7 +95,7 @@ PrivateData = @{
     PSData = @{
 
         # Tags applied to this module. These help with module discovery in online galleries.
-        Tags = @('PSEdition_Desktop', 'PSEdition_Core', 'Windows', 'Git', 'git', 'posh-git', 'prompt', 'theme')
+        Tags = @('PSEdition_Desktop', 'PSEdition_Core', 'Windows', 'Git', 'posh-git', 'prompt', 'theme', 'Linux', 'Mac')
 
         # A URL to the license for this module.
         LicenseUri = 'https://github.com/rkitover/posh-git-theme-bluelotus/blob/master/LICENSE'
