@@ -84,7 +84,7 @@ AliasesToExport = @()
 # DscResourcesToExport = @()
 
 # List of all modules packaged with this module
-ModuleList = @('posh-git-theme-bluelotus')
+# ModuleList = @()
 
 # List of all files packaged with this module
 FileList = @('posh-git-theme-bluelotus.psm1', 'posh-git-theme-bluelotus.psd1', 'en/about_posh-git-theme-bluelotus.help.txt')
