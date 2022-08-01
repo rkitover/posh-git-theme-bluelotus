@@ -4,3 +4,6 @@
 
 # Makefile stamps
 .*-stamp
+
+# Files to publish.
+posh-git-theme-bluelotus/
