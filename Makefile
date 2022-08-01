@@ -1,6 +1,6 @@
 touch=echo >
 
-all: README.md .doctoc-stamp .link-check-stamp
+all: .doctoc-stamp .link-check-stamp
 
 .doctoc-stamp: README.md
 	@doctoc --notitle --github README.md
