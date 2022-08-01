@@ -1,0 +1,6 @@
+# Vim files
+.*.un~
+.*.swp
+
+# Makefile stamps
+.*-stamp
