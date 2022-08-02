@@ -82,4 +82,18 @@ override this property in your `$profile` after importing this module:
 $gitpromptsettings.windowtitle =
   $gitprompt_theme_bluelotus.originalwindowtitle
 ```
+. Here are also some [PSReadLine](https://github.com/PowerShell/PSReadLine)
+command-line editing settings that you may like, add this to your `$profile`:
+
+```powershell
+import-module psreadline
+
+set-psreadlineoption -editmode emacs
+set-psreadlineoption -historysearchcursormovestoend
+set-psreadlineoption -bellstyle none
+
+set-psreadlinekeyhandler -key tab       -function complete
+set-psreadlinekeyhandler -key uparrow   -function historysearchbackward
+set-psreadlinekeyhandler -key downarrow -function historysearchforward
+```
 .
