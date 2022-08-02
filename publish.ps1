@@ -1,3 +1,14 @@
+param(
+    [string]$ApiKey,
+    [validatescript({
+        if (-not (test-path -pathtype leaf $_)) {
+            throw "Certificate file '$_' does not exist."
+        }
+        $true
+    })]
+    [system.io.fileinfo]$Certificate
+)
+
 $erroractionpreference = 'stop'
 
 $module = split-path -leaf $psscriptroot
@@ -14,17 +25,39 @@ if (test-path $prep_dir) {
 }
 mkdir $prep_dir | out-null
 
+# Copy the sources.
 $sources | %{
     $dest = $prep_dir
     if ($dir = split-path -parent $_) {
         $dest = join-path $dest $dir
         mkdir $dest | out-null
     }
-    cpi $_ $dest
+    # Also convert from UNIX to DOS line endings.
+    gc $_ | set-content (join-path $dest (split-path -leaf $_))
 }
 
-$api_key = read-host -maskinput "Enter PSGallery API key"
+if ($certificate) {
+    'Please enter the password for your codesigning certificate when prompted.'
+    $cert = get-pfxcertificate $certificate
+
+    $sources | ?{ $_ -match '\.ps[md]?1$' } | %{
+        $signing = set-authenticodesignature `
+            -filepath (join-path $prep_dir $_) `
+            -cert $cert `
+            -hash 'SHA256' `
+            -includechain 'all' `
+            -timestampserver 'http://timestamp.sectigo.com'
+
+        if ($signing.status -ne 'Valid') {
+            throw "Failed to sign file '$_'.`n  status: $($signing.status)`n  message: $($signing.statusmessage)"
+        }
+    }
+}
 
 import-module powershellget
 
-publish-psresource -path $prep_dir -repo psgallery -apikey $api_key -verbose
+if (-not $apikey) {
+    $apikey = read-host -maskinput "Enter PSGallery API key"
+}
+
+publish-psresource -path $prep_dir -repo psgallery -apikey $apikey -verbose
