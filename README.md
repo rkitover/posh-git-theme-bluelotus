@@ -61,7 +61,7 @@ git clone git@github.com:rkitover/posh-git-theme-bluelotus
 
 ```powershell
 import-module ~/source/repos/posh-git/src/posh-git.psd1
-import-module ~/source/repos/posh-git-theme-bluelotus/posh-git-theme-bluelotus.psm1
+import-module ~/source/repos/posh-git-theme-bluelotus/posh-git-theme-bluelotus.psd1
 ```
 .
 
