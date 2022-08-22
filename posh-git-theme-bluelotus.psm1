@@ -1,6 +1,3 @@
-# Exported settings variable.
-$gitprompt_theme_bluelotus = @{}
-
 # Windows PowerShell does not support the `e special character
 # sequence for Escape, so we use a variable $e for this.
 $e = [char]27
@@ -64,6 +61,21 @@ else {
     $hostname = (hostname) -replace '\..*',''
 }
 
+# Save original values to exported var in case the user wants to restore any of
+# them.
+
+$gitprompt_theme_bluelotus = $gitpromptsettings | %{ [ordered]@{
+    OriginalDefaultPromptPrefixText              = $_.defaultpromptprefix.text
+    OriginalDefaultPromptBeforeSuffixText        = $_.defaultpromptbeforesuffix.text
+    OriginalWindowTitle                          = $_.windowtitle
+    OriginalDefaultPromptAbbreviateHomeDirectory = $_.defaultpromptabbreviatehomedirectory
+    OriginalDefaultPromptWriteStatusFirst        = $_.defaultpromptwritestatusfirst
+    OriginalDefaultPromptPathForegroundColor     = $_.defaultpromptpath.foregroundcolor
+    OriginalDefaultPromptSuffixForegroundColor   = $_.defaultpromptsuffix.foregroundcolor
+}}
+
+# Set the theme.
+
 $gitpromptsettings.defaultpromptprefix.text = '{0} {1} ' `
     -f '$(prompt_error_indicator)',$env_indicator
 
@@ -82,11 +94,10 @@ $gitpromptsettings.defaultpromptpath.foregroundcolor =
 $gitpromptsettings.defaultpromptsuffix.foregroundcolor =
     $suffix_color
 
-$gitprompt_theme_bluelotus.OriginalWindowTitle =
-    $gitpromptsettings.windowtitle
-
 $gitpromptsettings.windowtitle = $null
 
 $host.ui.rawui.windowtitle = $hostname
+
+# Exports.
 
 export-modulemember -var 'gitprompt_theme_bluelotus'

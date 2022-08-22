@@ -20,6 +20,20 @@ USAGE AND CUSTOMIZATION
     # $gitpromptsettings.windowtitle =
     #     $gitprompt_theme_bluelotus.originalwindowtitle
 
+OVERRIDDEN VALUES
+    These are the posh-git values overridden by this theme and preserved in the
+    $gitprompt_theme_bluelotus hash table:
+
+    | Original Value                                          | Key For Preserved Value                      |
+    |---------------------------------------------------------|----------------------------------------------|
+    | $GitPromptSettings.DefaultPromptPrefix.Text             | OriginalDefaultPromptPrefixText              |
+    | $GitPromptSettings.DefaultPromptBeforeSuffix.Text       | OriginalDefaultPromptBeforeSuffixText        |
+    | $GitPromptSettings.WindowTitle                          | OriginalWindowTitle                          |
+    | $GitPromptSettings.DefaultPromptAbbreviateHomeDirectory | OriginalDefaultPromptAbbreviateHomeDirectory |
+    | $GitPromptSettings.DefaultPromptWriteStatusFirst        | OriginalDefaultPromptWriteStatusFirst        |
+    | $GitPromptSettings.DefaultPromptPath.ForegroundColor    | OriginalDefaultPromptPathForegroundColor     |
+    | $GitPromptSettings.DefaultPromptSuffix.ForegroundColor  | OriginalDefaultPromptSuffixForegroundColor   |
+
 KEYWORDS
     Git git prompt posh-git theme
 

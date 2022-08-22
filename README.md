@@ -4,6 +4,7 @@
 - [posh-git-theme-bluelotus](#posh-git-theme-bluelotus)
   - [installation](#installation)
   - [configuration](#configuration)
+  - [miscellaneous](#miscellaneous)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -72,6 +73,19 @@ settings](https://github.com/dahlbyk/posh-git/wiki/Customizing-Your-PowerShell-P
 which you can further modify/override after loading the module. Look at the
 [source code](/posh-git-theme-bluelotus.psm1) to see what is changed.
 
+The default [posh-git](https://github.com/dahlbyk/posh-git) values are
+preserved in the `$gitprompt_theme_bluelotus` exported hash table as follows:
+
+| Original Value                                          | Key For Preserved Value                      |
+|---------------------------------------------------------|----------------------------------------------|
+| $GitPromptSettings.DefaultPromptPrefix.Text             | OriginalDefaultPromptPrefixText              |
+| $GitPromptSettings.DefaultPromptBeforeSuffix.Text       | OriginalDefaultPromptBeforeSuffixText        |
+| $GitPromptSettings.WindowTitle                          | OriginalWindowTitle                          |
+| $GitPromptSettings.DefaultPromptAbbreviateHomeDirectory | OriginalDefaultPromptAbbreviateHomeDirectory |
+| $GitPromptSettings.DefaultPromptWriteStatusFirst        | OriginalDefaultPromptWriteStatusFirst        |
+| $GitPromptSettings.DefaultPromptPath.ForegroundColor    | OriginalDefaultPromptPathForegroundColor     |
+| $GitPromptSettings.DefaultPromptSuffix.ForegroundColor  | OriginalDefaultPromptSuffixForegroundColor   |
+
 It also changes the
 [`$host.ui.rawui.windowtitle`](https://docs.microsoft.com/en-us/dotnet/api/system.management.automation.host.pshostrawuserinterface.windowtitle?view=powershellsdk-7.0.0#system-management-automation-host-pshostrawuserinterface-windowtitle)
 property to set the window title to the current hostname. If you would prefer to
@@ -82,7 +96,10 @@ override this property in your `$profile` after importing this module:
 $gitpromptsettings.windowtitle =
   $gitprompt_theme_bluelotus.originalwindowtitle
 ```
-. Here are also some [PSReadLine](https://github.com/PowerShell/PSReadLine)
+
+### miscellaneous
+
+Here are also some [PSReadLine](https://github.com/PowerShell/PSReadLine)
 command-line editing settings that you may like, add this to your `$profile`:
 
 ```powershell
