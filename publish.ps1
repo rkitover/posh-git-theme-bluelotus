@@ -2,6 +2,13 @@ param(
     [string]$ApiKey,
     [validatescript({
         if (-not (test-path -pathtype leaf $_)) {
+            throw "File containing API key '$_' does not exist."
+        }
+        $true
+    })]
+    [system.io.fileinfo]$ApiKeyFile,
+    [validatescript({
+        if (-not (test-path -pathtype leaf $_)) {
             throw "Certificate file '$_' does not exist."
         }
         $true
@@ -55,6 +62,10 @@ if ($certificate) {
 }
 
 import-module powershellget
+
+if ($apikeyfile) {
+    $apikey = gc $apikeyfile
+}
 
 if (-not $apikey) {
     $apikey = read-host -maskinput "Enter PSGallery API key"
