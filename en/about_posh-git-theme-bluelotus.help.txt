@@ -33,6 +33,14 @@ OVERRIDDEN VALUES
     | $GitPromptSettings.DefaultPromptWriteStatusFirst        | OriginalDefaultPromptWriteStatusFirst        |
     | $GitPromptSettings.DefaultPromptPath.ForegroundColor    | OriginalDefaultPromptPathForegroundColor     |
     | $GitPromptSettings.DefaultPromptSuffix.ForegroundColor  | OriginalDefaultPromptSuffixForegroundColor   |
+    | $GitPromptSettings.BeforeStatus.ForegroundColor         | OriginalBeforeStatusForegroundColor          |
+    | $GitPromptSettings.AfterStatus.ForegroundColor          | OriginalAfterStatusForegroundColor           |
+    | $GitPromptSettings.BranchColor.ForegroundColor          | OriginalBranchColorForegroundColor           |
+    | $GitPromptSettings.BranchIdenticalStatusSymbol          | OriginalBranchIdenticalStatusSymbol          |
+    | $GitPromptSettings.BranchGoneStatusSymbol               | OriginalBranchGoneStatusSymbol               |
+    | $GitPromptSettings.BranchAheadStatusSymbol              | OriginalBranchAheadStatusSymbol              |
+    | $GitPromptSettings.BranchBehindStatusSymbol             | OriginalBranchBehindStatusSymbol             |
+    | $GitPromptSettings.BranchBehindAndAheadStatusSymbol     | OriginalBranchBehindAndAheadStatusSymbol     |
 
 KEYWORDS
     Git git prompt posh-git theme

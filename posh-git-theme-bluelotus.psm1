@@ -19,8 +19,12 @@ $windows_color  = "$e[38;2;032;178;170m"
 $mac_blue       = "$e[38;2;098;137;213m"
 $mac_grey       = "$e[38;2;196;205;239m"
 
-$path_color     = 0xC4A000
-$suffix_color   = 0xDC143C
+$path_color         = 0xC4A000
+$suffix_color       = 0xDC143C
+$branch_color       = 0x75507B
+$bracket_color      = 0x06989A
+
+$branch_sep_color   = "$e[0;97m"
 
 function global:prompt_error_indicator() {
     if ($gitpromptvalues.dollarquestion) {
@@ -72,6 +76,14 @@ $gitprompt_theme_bluelotus = $gitpromptsettings | %{ [ordered]@{
     OriginalDefaultPromptWriteStatusFirst        = $_.defaultpromptwritestatusfirst
     OriginalDefaultPromptPathForegroundColor     = $_.defaultpromptpath.foregroundcolor
     OriginalDefaultPromptSuffixForegroundColor   = $_.defaultpromptsuffix.foregroundcolor
+    OriginalBeforeStatusForegroundColor          = $_.beforestatus.foregroundcolor
+    OriginalAfterStatusForegroundColor           = $_.afterstatus.foregroundcolor
+    OriginalBranchColorForegroundColor           = $_.branchcolor.foregroundcolor
+    OriginalBranchIdenticalStatusSymbol          = $_.branchidenticalstatussymbol
+    OriginalBranchGoneStatusSymbol               = $_.branchgonestatussymbol
+    OriginalBranchAheadStatusSymbol              = $_.branchaheadstatussymbol
+    OriginalBranchBehindStatusSymbol             = $_.branchbehindstatussymbol
+    OriginalBranchBehindAndAheadStatusSymbol     = $_.branchbehindandaheadstatussymbol
 }}
 
 # Set the theme.
@@ -88,11 +100,24 @@ $gitpromptsettings.defaultpromptbeforesuffix.text =
 $gitpromptsettings.defaultpromptabbreviatehomedirectory = $true
 $gitpromptsettings.defaultpromptwritestatusfirst        = $false
 
-$gitpromptsettings.defaultpromptpath.foregroundcolor =
-    $path_color
+$gitpromptsettings.defaultpromptpath.foregroundcolor    = $path_color
+$gitpromptsettings.defaultpromptsuffix.foregroundcolor  = $suffix_color
 
-$gitpromptsettings.defaultpromptsuffix.foregroundcolor =
-    $suffix_color
+$gitpromptsettings.beforestatus.foregroundcolor         = $bracket_color
+$gitpromptsettings.afterstatus.foregroundcolor          = $bracket_color
+
+$gitpromptsettings.branchcolor.foregroundcolor                      = $branch_color
+$gitpromptsettings.branchidenticalstatussymbol.foregroundcolor      = $branch_color
+$gitpromptsettings.branchgonestatussymbol.foregroundcolor           = $branch_color
+$gitpromptsettings.branchaheadstatussymbol.foregroundcolor          = $branch_color
+$gitpromptsettings.branchbehindstatussymbol.foregroundcolor         = $branch_color
+$gitpromptsettings.branchbehindandaheadstatussymbol.foregroundcolor = $branch_color
+
+$gitpromptsettings.branchidenticalstatussymbol.text                 = "${branch_sep_color}|${green}v"
+$gitpromptsettings.branchgonestatussymbol.text                      = "${branch_sep_color}|${red}×"
+$gitpromptsettings.branchaheadstatussymbol.text                     = "${branch_sep_color}|${red}↑"
+$gitpromptsettings.branchbehindstatussymbol.text                    = "${branch_sep_color}|${red}↓"
+$gitpromptsettings.branchbehindandaheadstatussymbol.text            = "${branch_sep_color}|${red}↕"
 
 $gitpromptsettings.windowtitle = $null
 

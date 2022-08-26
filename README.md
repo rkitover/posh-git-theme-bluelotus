@@ -85,6 +85,14 @@ preserved in the `$gitprompt_theme_bluelotus` exported hash table as follows:
 | $GitPromptSettings.DefaultPromptWriteStatusFirst        | OriginalDefaultPromptWriteStatusFirst        |
 | $GitPromptSettings.DefaultPromptPath.ForegroundColor    | OriginalDefaultPromptPathForegroundColor     |
 | $GitPromptSettings.DefaultPromptSuffix.ForegroundColor  | OriginalDefaultPromptSuffixForegroundColor   |
+| $GitPromptSettings.BeforeStatus.ForegroundColor         | OriginalBeforeStatusForegroundColor          |
+| $GitPromptSettings.AfterStatus.ForegroundColor          | OriginalAfterStatusForegroundColor           |
+| $GitPromptSettings.BranchColor.ForegroundColor          | OriginalBranchColorForegroundColor           |
+| $GitPromptSettings.BranchIdenticalStatusSymbol          | OriginalBranchIdenticalStatusSymbol          |
+| $GitPromptSettings.BranchGoneStatusSymbol               | OriginalBranchGoneStatusSymbol               |
+| $GitPromptSettings.BranchAheadStatusSymbol              | OriginalBranchAheadStatusSymbol              |
+| $GitPromptSettings.BranchBehindStatusSymbol             | OriginalBranchBehindStatusSymbol             |
+| $GitPromptSettings.BranchBehindAndAheadStatusSymbol     | OriginalBranchBehindAndAheadStatusSymbol     |
 
 It also changes the
 [`$host.ui.rawui.windowtitle`](https://docs.microsoft.com/en-us/dotnet/api/system.management.automation.host.pshostrawuserinterface.windowtitle?view=powershellsdk-7.0.0#system-management-automation-host-pshostrawuserinterface-windowtitle)
