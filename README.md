@@ -17,7 +17,7 @@ It shows a last command success/error indicator, the Git branch and status when
 in a Git repository, and your current username and hostname. This is what it
 looks like:
 
-![posh-git-theme-bluelotus screenshot](/screenshots/prompt-demo.png?raw=true)
+<img src="/screenshots/prompt-demo.png?raw=true" width="100%" />
 
 . I also maintain a POSIX shell (bash, busybox, etc.) prompt with a design
 similar to this one [here](https://github.com/rkitover/sh-prompt-simple).
