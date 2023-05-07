@@ -40,7 +40,7 @@ $sources | %{
         mkdir $dest | out-null
     }
     # Also convert from UNIX to DOS line endings.
-    gc $_ | set-content (join-path $dest (split-path -leaf $_))
+    gc -encoding utf8bom $_ | set-content -encoding utf8bom (join-path $dest (split-path -leaf $_))
 }
 
 if ($certificate) {

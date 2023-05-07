@@ -1,4 +1,4 @@
-# Windows PowerShell does not support the `e special character
+﻿# Windows PowerShell does not support the `e special character
 # sequence for Escape, so we use a variable $e for this.
 $e = [char]27
 
@@ -126,3 +126,5 @@ $host.ui.rawui.windowtitle = $hostname
 # Exports.
 
 export-modulemember -var 'gitprompt_theme_bluelotus'
+
+# vim:fileencoding=utf8 bomb sw=4 sts=4 et:
