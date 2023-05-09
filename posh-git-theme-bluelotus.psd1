@@ -27,7 +27,7 @@ Author = 'Rafael Kitover'
 CompanyName = 'Rafael Kitover'
 
 # Copyright statement for this module
-Copyright = '(c) 2022 Rafael Kitover.'
+Copyright = '(c) 2023 Rafael Kitover.'
 
 # Description of the functionality provided by this module
 Description = 'Theme for the posh-git prompt module with last command status indicator, username and host.'
