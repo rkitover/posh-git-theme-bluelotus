@@ -37,22 +37,22 @@ function global:prompt_error_indicator() {
 
 $env_indicator = if ($islinux -or $iswindows) {
     "${bright_magenta}{0}{1}{2}{3}${reset}" `
-    -f @('PWSH';
+    -f @('pwsh';
         ("${bright_black}{0}${reset}"            -f '{'),
         $(if ($islinux) {
-            "${bold}${linux_color}{0}${reset}"   -f 'L'
+            "${bold}${linux_color}{0}${reset}"   -f 'lin'
         }
         else { # windows
-            "${bold}${windows_color}{0}${reset}" -f 'W'
+            "${bold}${windows_color}{0}${reset}" -f 'win'
         }),
         ("${bright_black}{0}${reset}"            -f '}')
     )
 }
 elseif ($ismacos) {
     "${mac_grey}{0}{1}{2}{3}${reset}" `
-        -f 'PWSH',
+        -f 'pwsh',
             ("${bright_black}{0}${reset}"    -f '{'),
-            ("${bold}${mac_blue}{0}${reset}" -f 'M'),
+            ("${bold}${mac_blue}{0}${reset}" -f 'mac'),
             ("${bright_black}{0}${reset}"    -f '}')
 }
 

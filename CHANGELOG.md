@@ -34,3 +34,8 @@
 - Add a BOM to module file to fix compatibility with Windows PowerShell.
 - Codesign with new cert.
 - Update this CHANGELOG.md.
+
+## 0.0.9
+
+- Change 'PWSH{OS}' token to lowercase 'pwsh{os}' with 3 letter OS indicator,
+  'win', 'lin' and 'mac'.
