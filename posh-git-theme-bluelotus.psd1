@@ -12,7 +12,7 @@
 RootModule = 'posh-git-theme-bluelotus.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.0.8'
+ModuleVersion = '0.0.9'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -27,7 +27,7 @@ Author = 'Rafael Kitover'
 CompanyName = 'Rafael Kitover'
 
 # Copyright statement for this module
-Copyright = '(c) 2023 Rafael Kitover.'
+Copyright = '(c) 2024 Rafael Kitover.'
 
 # Description of the functionality provided by this module
 Description = 'Theme for the posh-git prompt module with last command status indicator, username and host.'
