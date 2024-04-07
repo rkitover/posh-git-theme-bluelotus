@@ -40,7 +40,7 @@ $env_indicator = if ($islinux -or $iswindows) {
     -f @('pwsh';
         ("${bright_black}{0}${reset}"            -f '{'),
         $(if ($islinux) {
-            "${bold}${linux_color}{0}${reset}"   -f 'lin'
+            "${bold}${linux_color}{0}${reset}"   -f 'lnx'
         }
         else { # windows
             "${bold}${windows_color}{0}${reset}" -f 'win'

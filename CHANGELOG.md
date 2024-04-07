@@ -39,3 +39,7 @@
 
 - Change 'PWSH{OS}' token to lowercase 'pwsh{os}' with 3 letter OS indicator,
   'win', 'lin' and 'mac'.
+
+## 0.1.0
+
+- Change 'lin' symbol to 'lnx' for Linux.
