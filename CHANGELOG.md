@@ -43,3 +43,7 @@
 ## 0.1.0 - April 7, 2024
 
 - Change 'lin' symbol to 'lnx' for Linux.
+
+## 0.1.1 - December 29, 2024
+
+- Use 'WinPS' symbol for Windows PowerShell instead of 'pwsh{win}'.
