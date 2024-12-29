@@ -35,7 +35,10 @@ function global:prompt_error_indicator() {
     }
 }
 
-$env_indicator = if ($islinux -or $iswindows) {
+$env_indicator = if ((get-process -id $pid).path -match 'WindowsPowerShell') {
+    "${bold}${windows_color}WinPS${reset}"
+}
+elseif ($islinux -or $iswindows) {
     "${bright_magenta}{0}{1}{2}{3}${reset}" `
     -f @('pwsh';
         ("${bright_black}{0}${reset}"            -f '{'),
